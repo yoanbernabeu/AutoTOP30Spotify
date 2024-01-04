@@ -1,0 +1,21 @@
+# config/packages/calliostro_spotify_web_api.yaml
+calliostro_spotify_web_api:
+
+  # Your Client ID
+  client_id:            '%env(SPOTIFY_CLIENT_ID)%' # Required
+
+  # Your Client Secret
+  client_secret:        '%env(SPOTIFY_CLIENT_SECRET)%' # Required
+
+  # Options for SpotifyWebAPI client
+  # https://github.com/jwilsson/spotify-web-api-php/blob/main/docs/examples/setting-options.md
+  options:
+    auto_refresh:         false
+    auto_retry:           false
+    return_assoc:         false
+
+  # Address to redirect to after authentication success OR failure
+  redirect_uri:         '%env(SPOTIFY_REDIRECT_URI)%' # Required
+
+  # Service ID of the token provider that provides the user's access token
+  token_provider:       calliostro_spotify_web_api.token_provider
